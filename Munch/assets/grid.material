@@ -1,0 +1,11 @@
+
+#texture
+texture=assets/tiles.png
+
+#atlas 
+tex_x=1
+tex_y=1
+
+#shaders 
+frag_shader=assets/default.frag
+vert_shader=assets/default.vert
