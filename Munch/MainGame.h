@@ -20,6 +20,8 @@ namespace Munch{
 		virtual void render(); 
 		virtual void unload(); 
 
+		void wKey(float Val);
+
 	private:
 		/// The tile map used for the 'maze' map
 		TileMap *tileMap;

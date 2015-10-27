@@ -9,6 +9,10 @@ namespace Munch{
 	MainGame::~MainGame(){
 	}
 
+	void MainGame::wKey(float Val){
+		std::cout << "W press: " << Val << std::endl;
+	}
+
 	void MainGame::init(){
 
 		// Load the material 
@@ -24,9 +28,12 @@ namespace Munch{
 
 		// Test Input class 
 		Input input; 
-		input.addBind()
+		input.init();
+		input.addBind<MainGame>(SDL_SCANCODE_W, &MainGame::wKey, this);
+
 		
 	}
+
 
 	void MainGame::update(){
 		this->tileMap->update();
