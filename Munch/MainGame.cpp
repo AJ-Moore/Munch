@@ -1,4 +1,5 @@
 #include "MainGame.h"
+#include "Input.h"
 
 namespace Munch{
 
@@ -15,10 +16,16 @@ namespace Munch{
 		_mat->init("assets/grid.material");
 
 		std::vector<S32> _data;
-		_data.resize(30 * 20);
+		_data.resize(40 * 24);
 
-		this->tileMap = new TileMap(glm::vec2(30,20),_data,_mat);
+		this->tileMap = new TileMap(glm::vec2(40,24),_data,_mat);
 		this->tileMap->init();
+		level.newLevel("Level1");
+
+		// Test Input class 
+		Input input; 
+		input.addBind()
+		
 	}
 
 	void MainGame::update(){

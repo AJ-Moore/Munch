@@ -24,6 +24,8 @@
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Munch.cpp" />
@@ -38,6 +40,8 @@
     <ClInclude Include="Display.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Texture.h" />

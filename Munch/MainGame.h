@@ -6,6 +6,7 @@
 #include "Common.h"
 #include "GameState.h"
 #include "TileMap.h"
+#include "Level.h"
 
 namespace Munch{
 	/*The game itself.*/
@@ -22,6 +23,9 @@ namespace Munch{
 	private:
 		/// The tile map used for the 'maze' map
 		TileMap *tileMap;
+
+		/// Holds level data, facilitates the loading unloading of levels.
+		Level level; 
 	};
 
 }
