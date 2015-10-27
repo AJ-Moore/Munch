@@ -15,9 +15,9 @@ namespace Munch{
 		/// <summary>
 		/// Creates a tile map of the requested size with the array passed in. 
 		/// </summary> 
-		/// <param name="Usize"> Unsigned Int 32 vec2 size of tilemap (width, height)
-		/// <param name="Udata"> Vector unsigned int grid data. 
-		/// <param name ="Mat"> Material used by the tile map. 
+		/// <param name="Usize"> Unsigned Int 32 vec2 size of tilemap (width, height) </param>
+		/// <param name="Udata"> Vector unsigned int grid data. </param>
+		/// <param name ="Mat"> Material used by the tile map. </param>
 		TileMap(glm::vec2 Usize, std::vector<S32> Udata, Material* Mat);
 		~TileMap();
 
