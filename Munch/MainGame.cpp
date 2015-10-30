@@ -1,5 +1,6 @@
 #include "MainGame.h"
 #include "Input.h"
+#include "Game.h"
 
 namespace Munch{
 
@@ -27,10 +28,8 @@ namespace Munch{
 		level.newLevel("Level1");
 
 		// Test Input class 
-		Input input; 
-		input.init();
-		input.addBind<MainGame>(SDL_SCANCODE_W, &MainGame::wKey, this);
-
+		Game::input.addBind<MainGame>(SDL_SCANCODE_W, &MainGame::wKey, this);
+		Game::input.addBind<MainGame>(JoyTarget::AXIS, 0, 0, &MainGame::wKey, this);
 		
 	}
 

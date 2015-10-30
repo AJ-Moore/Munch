@@ -6,6 +6,7 @@
 #include "Common.h"
 #include "Display.h"
 #include "Time.h"
+#include "Input.h"
 
 namespace Munch{
 	/*Central point for the application */
@@ -31,6 +32,8 @@ namespace Munch{
 
 		/// Display object used by the game, static for simplicity 
 		static Display display;
+
+		static Input input; 
 
 	private: 
 

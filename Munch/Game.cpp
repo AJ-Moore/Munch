@@ -7,6 +7,7 @@ namespace Munch{
 
 	// Static members 
 	Display Game::display;
+	Input Game::input;
 
 	Game::Game(){
 		this->gameRunning = false; 
@@ -16,8 +17,15 @@ namespace Munch{
 	}
 
 	bool Game::init(){
+		
 		display.setDisplay(100, 100, 1280, 720);
-		return display.init();
+		if (!display.init()){
+			return false;
+		}
+
+		Game::input.init();
+		
+		return true;
 	}
 
 	void Game::mainLoop(){
@@ -42,6 +50,7 @@ namespace Munch{
 	void Game::update(){
 		SDL_PumpEvents(); 
 		time.update();
+		input.poll();
 
 		// Update the current game state. 
 		GameState::updateState();

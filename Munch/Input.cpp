@@ -13,6 +13,12 @@ namespace Munch{
 		this->joyBinds = new JoyBinds[this->maxJoys](); 
 		this->axisBinds = new AxisBinds[this->maxJoys](); 
 		this->hatBinds = new HatBinds[this->maxJoys]();
+
+		SDL_JoystickEventState(SDL_ENABLE);
+		// Open joysticks, make sure to close on exit
+		for (int _i = 0; _i < SDL_NumJoysticks(); _i++){
+			SDL_JoystickOpen(_i);
+		}
 	}
 
 	void Input::poll(){

@@ -79,7 +79,7 @@ namespace Munch{
 
 			if (JoystickID >= this->maxJoys){
 				// Error 
-				std::cout << "Error JoystickID exceeds maximum available joysticks" std::endl; 
+				std::cout << "Error JoystickID exceeds maximum available joysticks" << std::endl; 
 			}
 
 			// Switch JoyTaret
@@ -90,11 +90,13 @@ namespace Munch{
 			case JoyTarget::BUTTON:
 				this->joyBinds[JoystickID].insert(std::make_pair(BindID, new Bind<T>(memberFunction, Obj)));
 				break;
-			case: JoyTarget::HAT
+			case JoyTarget::HAT:
+			{
 				// Totally legit solution
 				U16 _hat = BindID << 8;
 				_hat |= HatID;
 				this->hatBinds[JoystickID].insert(std::make_pair(_hat, new Bind<T>(memberFunction, Obj)));
+			}
 				break;
 			default:
 				std::cout << "Joy target not found" << std::endl;
