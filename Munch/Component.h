@@ -29,6 +29,9 @@ namespace Munch{
 		/// Sets the components position 
 		void setPosition(glm::vec3 Position);
 
+		/// Sets the components scale
+		void setScale(glm::vec3 Scale);
+
 		/// Gets the components position
 		glm::vec3 getPosition();
 
@@ -38,6 +41,9 @@ namespace Munch{
 
 		/// Rotation about the z axis 
 		float rotation;
+
+		/// The components scale.
+		glm::vec3 scale;
 
 		/// The components transformation matrix (Its position/ orientation in the world)
 		glm::mat4 transform;

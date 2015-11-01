@@ -28,10 +28,12 @@ namespace Munch{
 		/// The texture used by this program.
 		Texture texture;
 
-		/* Maintaing simplicity provide*/
+		/* Maintaing simplicity provide means to set uniforms*/
 
 		/// Sets the uniform
 		void uniformMat4fv(std::string Name, U32 Size, bool Transpose, glm::mat4 Matrix);
+
+		glm::vec2 getMapSize();
 
 	private: 
 		/// Loads the shader program.
@@ -54,6 +56,9 @@ namespace Munch{
 
 		/// Material configuration file.
 		Config matConfig; 
+
+		/// The map size, number of divisions in this material 
+		glm::vec2 mapSize; 
 
 	};
 }

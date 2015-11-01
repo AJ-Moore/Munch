@@ -130,23 +130,28 @@ namespace Munch{
 		float _height = 1.0f / this->sliceY;
 
 		for (U32 _x = 0; _x < this->sliceX; _x++){
-			for (U32 _y = 0; _y < this->sliceX; _y++){
+			for (U32 _y = 0; _y < this->sliceY; _y++){
+
 
 				// Bottom left
 				this->textureCoords[(_y * this->sliceX) + _x][0].x = _width * _x;
-				this->textureCoords[(_y * this->sliceX) + _x][0].y = 1.0f - ((_y+1) * _height); 
-				
+				this->textureCoords[(_y * this->sliceX) + _x][0].y = ((_y + 1) * _height);
+
 				// Top left
 				this->textureCoords[(_y * this->sliceX) + _x][1].x = _width * _x;
-				this->textureCoords[(_y * this->sliceX) + _x][1].y = 1.0f - (_y * _height);
+				this->textureCoords[(_y * this->sliceX) + _x][1].y = (_y * _height);
 
 				// Top right
 				this->textureCoords[(_y * this->sliceX) + _x][2].x = _width * (_x + 1);
-				this->textureCoords[(_y * this->sliceX) + _x][2].y = 1.0f - (_y * _height);
+				this->textureCoords[(_y * this->sliceX) + _x][2].y = (_y * _height);
 
 				// Bottom right 
 				this->textureCoords[(_y * this->sliceX) + _x][3].x = _width * (_x + 1);
-				this->textureCoords[(_y * this->sliceX) + _x][3].y = 1.0f - ((_y + 1) * _height);
+				this->textureCoords[(_y * this->sliceX) + _x][3].y = ((_y + 1) * _height);
+
+
+
+
 
 			}
 		}

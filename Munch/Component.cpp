@@ -3,6 +3,7 @@
 namespace Munch{
 
 	Component::Component(){
+		this->scale = glm::vec3(1, 1, 1);
 	}
 
 
@@ -30,6 +31,11 @@ namespace Munch{
 		this->updateTransform();
 	}
 
+	void Component::setScale(glm::vec3 Scale){
+		this->scale = Scale;
+		this->updateTransform();
+	}
+
 	void Component::setPosition(glm::vec3 Position){
 		this->position = Position; 
 		this->updateTransform(); 
@@ -47,6 +53,7 @@ namespace Munch{
 
 		this->transform = glm::translate(glm::mat4(1.0f), this->position);
 		this->transform = glm::rotate(this->transform, this->rotation, glm::vec3(0,0,1.0f));
+		this->transform = glm::scale(this->transform, this->scale);
 	}
 
 }

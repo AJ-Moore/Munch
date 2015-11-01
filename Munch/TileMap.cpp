@@ -35,6 +35,7 @@ namespace Munch{
 		// If dirty update buffer data 
 		if (this->isDirty){
 			this->updateBuffer();
+			this->isDirty = false; 
 		}
 	}
 
@@ -48,6 +49,14 @@ namespace Munch{
 
 		glBindBuffer(GL_ARRAY_BUFFER, this->bufferID);
 
+		// Vertices 
+		glVertexAttribPointer(0, 3, GL_FLOAT, false, 0, 0);
+
+		// Texture coords 
+		glVertexAttribPointer(1, 2, GL_FLOAT, false, 0, (GLvoid*)(sizeof(float) * this->bufferSize));
+
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
 
 		glDrawArrays(GL_TRIANGLES, 0, this->bufferSize / 3);
 

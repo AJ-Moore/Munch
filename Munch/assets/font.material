@@ -1,10 +1,10 @@
 
 #texture
-texture=assets/tiles.png
+texture=assets/fontmap_glow_red.png
 
 #atlas 
-tex_x=11
-tex_y=1
+tex_x=16
+tex_y=4
 
 #shaders 
 frag_shader=assets/default.frag

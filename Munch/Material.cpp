@@ -21,6 +21,8 @@ namespace Munch{
 		U32 _texX = this->matConfig.getInt("tex_x");
 		U32 _texY = this->matConfig.getInt("tex_y");
 
+		this->mapSize = glm::vec2(_texX, _texY);
+
 		// Load the texture 
 		this->texture.init(this->textureFile, _texX, _texY);
 
@@ -116,6 +118,10 @@ namespace Munch{
 
 	}
 
+
+	glm::vec2 Material::getMapSize(){
+		return this->mapSize;
+	}
 	
 	void Material::uniformMat4fv(std::string Name, U32 Size, bool Transpose,glm::mat4 Matrix){
 		glUseProgram(this->program);

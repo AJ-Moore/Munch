@@ -8,4 +8,4 @@ varying vec2 texCoord;
 void main(){
 	texCoord = texCoordAtrib;
 	gl_Position = wvpMat * Vertex;
-};
+}
